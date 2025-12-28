@@ -1,0 +1,21 @@
+# Use an official Ubuntu base image
+FROM ubuntu:24.04
+
+# Avoid interactive prompts during package installs
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Update package lists and install basic tools
+RUN apt-get update && \
+    apt-get install -y \
+        curl \
+        wget \
+        bash && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set default working directory
+WORKDIR /root
+
+# Default command when a container is started
+CMD ["bash"]
+

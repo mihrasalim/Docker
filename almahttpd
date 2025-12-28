@@ -1,0 +1,20 @@
+FROM almalinux:latest
+
+# Install Apache (httpd) and clean up cache
+RUN dnf -y update && \
+    dnf -y install httpd && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
+
+# Copy your static site content
+COPY pp2 /var/www/html/
+
+# Expose HTTP port
+EXPOSE 80
+
+# Run Apache in the foreground
+CMD ["httpd", "-D", "FOREGROUND"]
+
+
+
+

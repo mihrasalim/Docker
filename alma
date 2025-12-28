@@ -1,0 +1,6 @@
+FROM almalinux:minimal
+RUN microdnf -y update && \
+    microdnf -y install bash && \
+    microdnf clean all
+CMD ["/bin/bash"]
+

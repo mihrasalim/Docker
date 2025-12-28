@@ -1,0 +1,16 @@
+FROM alpine:latest
+
+# Install Apache
+RUN apk update && \
+    apk add --no-cache apache2 && \
+    mkdir -p /var/www/localhost/htdocs
+
+# Copy your website files
+COPY pp1 /var/www/localhost/htdocs/
+
+# Expose HTTP port
+EXPOSE 80
+
+# Run Apache in the foreground
+CMD ["httpd", "-D", "FOREGROUND"]
+

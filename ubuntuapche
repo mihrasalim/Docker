@@ -1,0 +1,5 @@
+FROM ubuntu:24.04
+RUN apt update && apt install apache2 -y
+EXPOSE 80
+CMD ["apache2ctl","-D" "-DFOREGROUND"]
+COPY templatemo_606_string_master /usr/local/apache2/htdocs
