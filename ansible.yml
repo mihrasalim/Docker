@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  ansible:
+    container_name: ansible
+    image: ansible/ansible:ubuntu1404
+    networks:
+    - network1
+networks:
+  network1:
+    name: network1
+    driver: bridge
+
+  

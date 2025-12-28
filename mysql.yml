@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  mysql-databse:
+    image: mysql:latest
+    container_name: mysql-container
+    ports: 
+    - "8888:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "1234"
+      MYSQL_DATABASE: "mysql"
+    volumes:
+    - database_data:/var/lib/sql
+    networks:
+    - network1
+volumes:
+  database_data:
+networks:
+  network1:
+
+

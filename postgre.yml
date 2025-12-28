@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgresql-database:
+    image:  postgres:16
+    container_name: postgres
+    ports:
+    - "8888:5432"
+    volumes:
+    - ./pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_ROOT_PASSWORD: "1234"
+      POSTGRES_DB: "mydb"
+volumes:
+   database_data:

@@ -1,0 +1,18 @@
+version: '3.9' 
+services:
+  mongodb-database:
+    image: mongo:latest
+    container_name: monodb-container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "1234"
+    ports:
+    - "6464:27017"
+    volumes:
+    - database_data:/data
+    networks:
+    - network1
+volumes:
+  database_data:
+networks:
+  network1:
