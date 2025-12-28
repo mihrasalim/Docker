@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  almalinux_container:
+    image: almalinux:latest
+    container_name: almalinux_container
+    command: ["tail","-f","/dev/null"]

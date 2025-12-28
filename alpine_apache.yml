@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  alpine_apache:
+    image: httpd:alpine3.23
+    container_name: alpine_apache-container
+    ports:
+    - "8887:80"
+    volumes:
+    - hosting_data:/data
+    networks:
+    - network1
+volumes:
+  hosting_data:
+networks:
+  network1:
+    name: network1
+    driver: bridge
+

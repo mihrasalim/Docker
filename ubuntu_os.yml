@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  ubuntu_container:
+    image: ubuntu:latest
+    container_name: ubuntu_container
+    command: ["sleep"," infinity"]

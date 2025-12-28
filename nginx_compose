@@ -1,0 +1,15 @@
+version: '9.4'
+services:
+  nginx_service:
+    image: nginx:latest
+    ports:
+    -  "8889:80"
+    volumes:
+    -  nginx_data:/data
+    networks:
+    - network1
+volumes:
+  nginx_data:
+networks:
+  network1:
+

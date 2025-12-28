@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  ubuntu_nginx:
+    image: ubuntu/nginx:latest
+    container_name: ubuntu_nginx-container
+    ports:
+    - "8888:80"
+    volumes:
+    - hosting_data:/data
+    networks:
+    - network1
+volumes:
+  hosting_data:
+networks:
+  network1:
+    name: network1
+    driver: bridge
+
